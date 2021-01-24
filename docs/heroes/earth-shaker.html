@@ -6,105 +6,217 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>撼地者（Earth Shaker） &#8212; One Versus Five  文档</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/insipid.css" type="text/css" />
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
+    <script defer src="../_static/insipid.js"></script>
+    <script defer src="../_static/insipid-sidebar.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="宙斯（Zeus）" href="zeus.html" />
     <link rel="prev" title="卓尔游侠（Drow Ranger）" href="drow-ranger.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body class="sidebar-visible">
+    <script type="text/javascript">
+        (function() {
+            var $body = $(document.body);
+            $body.addClass('js');
+            $body.addClass('sidebar-resizing');  // avoid transitions on load
+            $body.removeClass('sidebar-visible');
+            try {
+                var sidebar = localStorage.getItem('sphinx-sidebar');
+                if (sidebar === 'visible') {
+                    $body.addClass('sidebar-visible');
+                }
+                var sidebar_width = localStorage.getItem('sphinx-sidebar-width');
+                if (sidebar_width) {
+                    $(':root').css('--sidebar-width', sidebar_width);
+                }
+            } catch(e) {
+            }
+        })();
+    </script>
+    <header id="topbar-placeholder">
+      <div id="topbar">
+        <div id="titlebar">
+          <div class="buttons">
+            <button id="sidebar-button" type="button" aria-controls="sphinxsidebar" accesskey="M">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
+            </button>
+            <button id="search-button" type="button" title="搜索" aria-label="搜索" aria-expanded="false" aria-controls="search-form" accesskey="S">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+            </button>
+          </div>
+          <div class="title">
+            <a class="parent" href="../index.html" accesskey="U">One Versus Five  文档</a>
+            <a class="top" href="#">撼地者（Earth Shaker）</a>
+          </div>
+          <div class="buttons">
+            <button id="fullscreen-button" type="button" aria-hidden="true">
+              <span class="enable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M212.686 315.314L120 408l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C10.697 480 0 469.255 0 456V344c0-21.382 25.803-32.09 40.922-16.971L72 360l92.686-92.686c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.249 6.248 6.249 16.378 0 22.627zm22.628-118.628L328 104l-32.922-31.029C279.958 57.851 290.666 32 312.048 32h112C437.303 32 448 42.745 448 56v112c0 21.382-25.803 32.09-40.922 16.971L376 152l-92.686 92.686c-6.248 6.248-16.379 6.248-22.627 0l-25.373-25.373c-6.249-6.248-6.249-16.378 0-22.627z"/></svg>
+              </span>
+              <span class="disable">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M4.686 427.314L104 328l-32.922-31.029C55.958 281.851 66.666 256 88.048 256h112C213.303 256 224 266.745 224 280v112c0 21.382-25.803 32.09-40.922 16.971L152 376l-99.314 99.314c-6.248 6.248-16.379 6.248-22.627 0L4.686 449.941c-6.248-6.248-6.248-16.379 0-22.627zM443.314 84.686L344 184l32.922 31.029c15.12 15.12 4.412 40.971-16.97 40.971h-112C234.697 256 224 245.255 224 232V120c0-21.382 25.803-32.09 40.922-16.971L296 136l99.314-99.314c6.248-6.248 16.379-6.248 22.627 0l25.373 25.373c6.248 6.248 6.248 16.379 0 22.627z"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="searchbox" role="search">
+          <form id="search-form" class="search" style="display: none" action="../search.html" method="get">
+            <input type="search" name="q" placeholder="搜索 ..." />
+            <button>转向</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <a href="drow-ranger.html" class="nav-icon previous" title="上一页:&#13;卓尔游侠（Drow Ranger）" aria-label="上一个主题" accesskey="P" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+      </a>
+      <a href="zeus.html" class="nav-icon next" title="下一页:&#13;宙斯（Zeus）" aria-label="下一个主题" accesskey="N" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg>
+      </a>
+    </nav>
 
-  </head><body>
-  
+    <nav class="relbar">
+      <a class="previous" href="drow-ranger.html" aria-label="上一个主题" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">上一页</span>
+            卓尔游侠（Drow Ranger）
+          </span>
+        </div>
+      </a>
+      <a class="next" href="zeus.html" aria-label="下一个主题" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">下一页</span>
+            宙斯（Zeus）
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
-  <div class="section" id="earth-shaker">
+<div class="section" id="earth-shaker">
 <h1>撼地者（Earth Shaker）<a class="headerlink" href="#earth-shaker" title="永久链接至标题">¶</a></h1>
+<img alt="The hero icon of Earth Shaker." src="../_images/earth-shaker1.png" />
+<p>撼地者在前中期有非常高的爆发和控制能力，也可以靠大招团灭抱团的敌人。但是撼地者的续航能力很差，难以应付敌人的车轮战，而大招的冷却很长，没有大招时几乎灭可能一打五。因此，撼地者的打法是：<strong>前期无解肥，中后期带线牵制</strong>。</p>
+<p>撼地者的获胜难度较大，需要一定运气。</p>
+<div class="section" id="id1">
+<h2>英雄应对<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>克制：</p>
+<ul class="simple">
+<li><p><strong>天怒法师</strong>、<strong>湮灭法师</strong>等低护甲、低血量的英雄被撼地者克制，前中期有黯灭的撼地者可以轻松秒杀他们。</p></li>
+</ul>
+<p>被克制：</p>
+<ul class="simple">
+<li><p><strong>舰队统帅</strong>很克制撼地者，因为他的「X 标记」技能使得撼地者无法用 A 杖「强化图腾」逃生，而不得灭出「林肯法球」，而即使出了「林肯法球」，后期敌人也有很多指向性物品可以破林肯。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>打法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>对线期，走单人路，保证补刀碾压对手，二、三对点，看情况点大招，出「护腕」x2、「勇气勋章」、「速度之靴」，尽可能地保证 5 级之后能“见面就杀”。</p>
+<p>破单人路一塔后，做出「黯灭」，四处找机会杀人、带线，少打野。若对面五人推塔，利用 TP 进人堆+大招的方式团灭对方，尽可能取得最大优势。</p>
+<p>做出「远行鞋」，然后带线、杀人、推塔。带线时尽可能不要用「沟壑」，同时不断运「净化药水」来保证蓝量充足。</p>
+<p>不断用技巧牵制对方，做出「阿哈利姆神杖」，有了它可以很极限地磨塔、然后当着敌人的面跑掉。然后做「恐鳌之心」，「狂战斧」和「盛势闪光」。有这些装备后可以保证续航、逃生和带线速度。值得注意的是，撼地者的机动性很高，许多时候在两路之间的移动靠跳刀和 A 杖强化图腾就行。</p>
+<p>后期继续做推进与生存装备，继续磨塔，直至胜利。</p>
+</div>
+<div class="section" id="id3">
+<h2>成功案例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>比赛 ID 5799912053。</p>
+<div class="figure align-default">
+<img alt="../_images/earth-shaker-1.png" src="../_images/earth-shaker-1.png" />
+</div>
+<div class="figure align-default">
+<img alt="../_images/earth-shaker-2.png" src="../_images/earth-shaker-2.png" />
+</div>
+</div>
 </div>
 
-
+            <div class="clearer"></div>
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">One Versus Five</a></h1>
-
-
-
-
-
-
-
-
-<h3>导航</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="drow-ranger.html">卓尔游侠（Drow Ranger）</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">撼地者（Earth Shaker）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="zeus.html">宙斯（Zeus）</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="drow-ranger.html" title="上一章">卓尔游侠（Drow Ranger）</a></li>
-      <li>Next: <a href="zeus.html" title="下一章">宙斯（Zeus）</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">快速搜索</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="转向" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2021, Eric Zhuo Chen.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/heroes/earth-shaker.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    <nav class="relbar">
+      <a class="previous" href="drow-ranger.html" aria-label="上一个主题" >
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+        </div>
+        <div class="title">
+          <span class="text">
+            <span class="direction">上一页</span>
+            卓尔游侠（Drow Ranger）
+          </span>
+        </div>
+      </a>
+      <a class="next" href="zeus.html" aria-label="下一个主题" >
+        <div class="title">
+          <span class="text">
+            <span class="direction">下一页</span>
+            宙斯（Zeus）
+          </span>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        </div>
+      </a>
+    </nav>
 
-    
+
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+          <div class="sidebar-resize-handle"></div>
+
+<h3><a href="../index.html">目录</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="drow-ranger.html">卓尔游侠（Drow Ranger）</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">撼地者（Earth Shaker）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">英雄应对</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">打法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">成功案例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zeus.html">宙斯（Zeus）</a></li>
+</ul>
+
+<hr class="docutils" />
+<ul>
+  <li class="toctree-l1"><a class="reference internal" href="../genindex.html" accesskey="I">总目录</a></li>
+</ul>
+<div id="ethical-ad-placement"></div>
+        </div>
+      </div>
+    <footer role="contentinfo">
+      &#169; 版权所有 2021, Eric Zhuo Chen.
+      Created using <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+      <a class="reference external" href="https://insipid-sphinx-theme.readthedocs.io/">Insipid Theme</a>.
+<a class="reference internal" href="../_sources/heroes/earth-shaker.rst.txt" rel="nofollow">显示源代码</a>.
+    </footer>
+    <div class="sidebar-resize-handle"></div>
+    <div id="overlay"></div>
   </body>
 </html>
