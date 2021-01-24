@@ -47,7 +47,7 @@ One Versus Five
 ----------------------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 0
 
    heroes/drow-ranger
    heroes/earth-shaker
