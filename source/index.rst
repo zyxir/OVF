@@ -23,11 +23,6 @@ One Versus Five
 
 这类英雄能通过在游戏早期大量屠杀敌方英雄而建立优势，并且让对方没有足够的经济购买关键装备（刃甲、天堂之戟等），从而取得能够正面一打五的能力，进而取胜。
 
-.. image:: icons/earth-shaker.png
-   :alt: The hero icon of Earth Shaker.
-   :width: 25%
-   :target: heroes/earth-shaker.html
-
 .. image:: icons/zeus.png
    :alt: The hero icon of Zeus.
    :width: 25%
@@ -37,6 +32,11 @@ One Versus Five
 ----------------------------------------
 
 这类英雄很难正面打过五个敌方英雄，但是可以通过不断地推进兵线来逼迫敌人来回守塔，并最终将敌方三路全部磨掉，令敌方机器人疲于守超级士兵，从而输掉比赛。
+
+.. image:: icons/earth-shaker.png
+   :alt: The hero icon of Earth Shaker.
+   :width: 25%
+   :target: heroes/earth-shaker.html
 
 .. image:: icons/drow-ranger.png
    :alt: The hero icon of Drow Ranger.
