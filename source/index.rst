@@ -43,7 +43,7 @@ One Versus Five
    :width: 25%
    :target: heroes/drow-ranger.html
 
-全部英雄目录
+全部英雄索引
 ----------------------------------------
 
 .. toctree::
